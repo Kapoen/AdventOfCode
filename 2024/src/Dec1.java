@@ -1,4 +1,3 @@
-import javax.lang.model.element.Element;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -23,8 +22,25 @@ public class Dec1 {
         list2.sort(Comparator.naturalOrder());
 
         int distance = getDistance(list1, list2);
+        System.out.println("Distance: " + distance);
 
-        System.out.println(distance);
+        int similarityScore = getSimilarityScore(list1, list2);
+        System.out.println("Similarity score: " + similarityScore);
+    }
+
+    private static int getSimilarityScore(List<Integer> list1, List<Integer> list2) {
+        int similarityScore = 0;
+
+        for(Integer e: list1) {
+            if(list2.contains(e)) {
+                List<Integer> duplicate = new ArrayList<>(list2);
+                duplicate.removeIf(integer -> !integer.equals(e));
+                int totalTimes = duplicate.size();
+                similarityScore += e * totalTimes;
+            }
+        }
+
+        return similarityScore;
     }
 
     private static int getDistance(List<Integer> list1, List<Integer> list2) {
