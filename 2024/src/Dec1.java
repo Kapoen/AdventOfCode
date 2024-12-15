@@ -18,9 +18,6 @@ public class Dec1 {
             list2.add(scanner.nextInt());
         }
 
-        list1.sort(Comparator.naturalOrder());
-        list2.sort(Comparator.naturalOrder());
-
         int distance = getDistance(list1, list2);
         System.out.println("Distance: " + distance);
 
@@ -45,6 +42,9 @@ public class Dec1 {
 
     private static int getDistance(List<Integer> list1, List<Integer> list2) {
         int distance = 0;
+
+        list1.sort(Comparator.naturalOrder());
+        list2.sort(Comparator.naturalOrder());
 
         for(int i = 0; i < list1.size(); i++) {
             int currentDistance = list1.get(i) - list2.get(i);

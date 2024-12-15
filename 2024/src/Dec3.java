@@ -1,11 +1,8 @@
-import javax.lang.model.element.Element;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.MatchResult;
-import java.util.stream.Stream;
 
 public class Dec3 {
     public static void main(String[] args) throws FileNotFoundException {
