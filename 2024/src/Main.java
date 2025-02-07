@@ -14,6 +14,9 @@ public class Main {
 
             System.out.println("\nDecember 4:");
             Dec4.main(args);
+
+            System.out.println("\nDecember 5:");
+            Dec5.main(args);
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         }
